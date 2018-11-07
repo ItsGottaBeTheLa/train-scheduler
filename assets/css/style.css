@@ -1,0 +1,23 @@
+.jumbotron {
+	/* Override jumbotron background color */
+	background-color: #FDAB00 !important;
+}
+.header {
+	color: #000;
+	text-align: center;
+}
+
+/* Train Schedule */
+.schedule-header {
+	background-color: #7F09B0 !important;
+}
+
+/* Form Field */
+.form-header {
+	background-color: #19FD95 !important;
+	color: #000;
+}
+
+.button-add {
+	background-color: #19FD95;
+}
