@@ -49,11 +49,78 @@
                                 <th scope = "col">Platform</th>
                             </tr>
                         </thead>
+                        <tbody id="train-schedule-body"></tbody>
                     </table>
+                </div>
+            </div>
+            <!--Form Area-->
+            <div class="card text-white bg-dark mb-3">
+                <div class="card-header form-header">
+                    Add Train to Schedule
+                </div>
+                <div class = "card-body">
+                    <form novalidate>
+                        <div class = "form-row">
+                            <div class = "form-group col-sm-6">
+                                <label for = "train-number">Train #</label>
+                                <input type = "number" class = "form-control" id = "train-number" min = "1" max = "999" placeholder = "123" required/>
+                                <div class = "invalid-feedback">
+                                    Please provide a train #!
+                                </div>
+                            </div>
+                            <div class = "form-group col-sm-6">
+                                <label for = "train-line">Line</label>
+                                <input type = "text" class = "form-control" id = "train-line" maxlength = 20 placeholder = "Express" required/>
+                                <div class = "invalid-feedback">
+                                    Please Provide a Train Line!
+                                </div>
+                            </div>    
+                        </div>
+                        <div class = "form-group">
+                            <label for = "train-destination">Destination</label>
+                            <input type = "text" class = "form-control" id = "train-destination" maxlength = 12 placeholder = "City or Station Name" required/>
+                            <div class = "invalid-feedback">
+                                Please Provide a Destination!
+                            </div>
+                        </div>
+                        <div class = "form-row">
+                            <div class = "form-group col-sm-4">
+                                <label for = "train-departure">First Departure (24hr Format)</label>
+                                <input type = "number" class = "form-control" id = "train-departure" placeholder = "0800" required/>
+                                <div class = "invalid feed-back">
+                                    Please provide a Train's Departure Time!
+                                </div>
+                            </div>
+                            <div class = "form-group col-sm-4">
+                                <label for = "train-frequency">Frequency (minutes)</label>
+                                <input type = "number" class = "form-control" id = "train-frequency" min = "10" max = "720" placeholder = "30" required/>
+                                <div class = "invalid-feedback">
+                                    Please provide a Train Frequency!
+                                </div>
+                            </div>
+                            <div class = "form-group col-sm-4">
+                                <label for = "train-platform">Platform</label>
+                                <input type = "text" class = "form-control" id = "train-platform" maxlength = 2 placeholder = "2a" required/>
+                                <div class = "invalid-feedback">
+                                    Please provide a Platform!
+                                </div>
+                            </div>
+                        </div>
+                        <button type = "submit" class = "btn button-add">Add Train</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    <!--Link to momentjs CDN-->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js"></script>
+    <!--Firebase Link-->
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <!--Link to jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--Link to Bootstrap for JS CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
 </body>
 </html>
