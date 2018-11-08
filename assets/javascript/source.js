@@ -39,17 +39,21 @@ var model = {
         model.pullChildFromDatabase();
     },
     pullChildFromDatabase: () => {
-        var filter = database.ref().orderByChild('dateAdded').limitToLast(1)
-        filter.once('child_added', function(childSnapshot){
-            trainNumber = childSnapshot.val().trainNumber
-            trainLine = childSnapshot.val().trainLine
-            trainDestination = childSnapshot.val().trainDestination
-            trainDeparture = childSnapshot.val().trainDeparture
-            trainFrequency = childSnapshot.val().trainFrequency
-            trainPlatform = childSnapShot.val().trainPlatform
-            console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
-            view.updateTrainScheduleTable();
+        var ref = database.ref();
+        ref.orderByChild("dateAdded").on("child_added", function(snapshot){
+            console.log(snapshot.val())
         });
+        // var filter = database.ref().orderByChild('dateAdded').limitToLast(1)
+        // filter.once('child_added', function(childSnapshot){
+        //     trainNumber = childSnapshot.val().trainNumber
+        //     trainLine = childSnapshot.val().trainLine
+        //     trainDestination = childSnapshot.val().trainDestination
+        //     trainDeparture = childSnapshot.val().trainDeparture
+        //     trainFrequency = childSnapshot.val().trainFrequency
+        //     trainPlatform = childSnapShot.val().trainPlatform
+        //     console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
+        //     view.updateTrainScheduleTable();
+        // });
     },
     initialDatabasePull: () => {
         database.ref().on("value", function(snapshot){
