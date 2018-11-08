@@ -21,3 +21,7 @@
 .button-add {
 	background-color: #19FD95;
 }
+.button-add:hover {
+	background-color: #7F09B0 !important;
+	color: #ffffff;
+}
